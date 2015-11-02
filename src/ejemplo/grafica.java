@@ -39,6 +39,7 @@ public class grafica extends javax.swing.JFrame {
         initComponents();
         
         cargarbarra();
+        System.out.println("HOla");
         
     }
 
