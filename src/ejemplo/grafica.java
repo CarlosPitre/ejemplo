@@ -598,7 +598,9 @@ public class grafica extends javax.swing.JFrame {
         txtMaximaAgua.setText(Integer.toString((int) Math.round(universoAgua)));        
         graficarNivelAgua(nivelAgua,universoAgua);
     }
-    
+    public void fuzificarDetergente(double porcentaje, double complemento){
+        
+    }
     public void graficarNivelAgua(double nivelAgua, double universo){
         double a = 0;
         double b = universo;
@@ -723,7 +725,50 @@ public class grafica extends javax.swing.JFrame {
     timer = new Timer(500, updateProBar);
     timer.start();  
     }
-    
+    private String[] mayorPeso(double porcentaje, double complemento, int bandera){
+        String arreglo[] = null;
+        if (bandera == 0){
+            if(porcentaje > complemento){
+                arreglo[0] = Double.toString(porcentaje);
+                arreglo[1] = "Pesado";
+            }else{
+                 arreglo[0] = Double.toString(complemento);
+                arreglo[1] = "Liviano";
+            }
+        }
+        if (bandera == 1){
+            if(porcentaje > complemento){
+                arreglo[0] = Double.toString(porcentaje);
+                arreglo[1] = "Pesado";
+            }else{
+                 arreglo[0] = Double.toString(complemento);
+                arreglo[1] = "Muy Pesado";
+            }
+        }
+        return arreglo;
+    }
+    private String[] mayorSuciedad(double porcentaje, double complemento, int bandera){
+        String arreglo[] = null;
+        if (bandera == 0){
+            if(porcentaje > complemento){
+                arreglo[0] = Double.toString(porcentaje);
+                arreglo[1] = "Sucia";
+            }else{
+                 arreglo[0] = Double.toString(complemento);
+                arreglo[1] = "Poco Sucia";
+            }
+        }
+        if (bandera == 1){
+            if(porcentaje > complemento){
+                arreglo[0] = Double.toString(porcentaje);
+                arreglo[1] = "Sucia";
+            }else{
+                 arreglo[0] = Double.toString(complemento);
+                arreglo[1] = "Muy Sucia";
+            }
+        }
+        return arreglo;
+    }
     private void valoresPertenecia(){
         double nivel = parseDouble(txtNivel.getText());
         double peso = parseDouble(txtPeso.getText());
@@ -734,24 +779,29 @@ public class grafica extends javax.swing.JFrame {
         double mN = (aN+bN)/2;
         double mP = (aP+bP)/2;
         double mT = (aT+bT)/2;
-        String mensajeNivel,mensajePeso,mensajeTipo;
+        String arregloSuciedad[], arregloPeso[];
+        String mensajeNivel,mensajePeso,mensajeTipo,bandera;
   
         if (nivel >= aN && nivel <= mN){
             porcentajeN = (nivel - aN)/(mN - aN);
             complementoN = 1-porcentajeN;
+            arregloSuciedad = mayorSuciedad(porcentajeN,complementoN,0);
             mensajeNivel = "El Nivel de Suciedad Pertenece en un " + Math.rint(porcentajeN*100) + "% Al Conjunto Difuso Sucia y en un " + Math.rint(complementoN*100) + "% Al Conjunto Difuso de Poco Sucia";
         }else{
             porcentajeN = (bN - nivel)/(bN - mN);
             complementoN = 1-porcentajeN;
+            arregloSuciedad = mayorSuciedad(porcentajeN,complementoN,1);
             mensajeNivel = "El Nivel de Suciedad Pertenece en un " + Math.rint(porcentajeN*100) + "% Al Conjunto Difuso Sucia y en un " + Math.rint(complementoN*100) + "% Al Conjunto Difuso Muy Sucia ";
         }
         if (peso >= aP && peso <= mP){
             porcentajeP = (peso - aP)/(mP - aP);
             complementoP = 1-porcentajeP;
+            arregloPeso = mayorPeso(porcentajeP,complementoP,0);
             mensajePeso = "El Nivel de Peso Pertenece en un " + Math.rint(porcentajeP*100) + "% Al Conjunto Difuso Pesado y en un " + Math.rint(complementoP*100) + "% Al Conjunto Difuso  Liviano";
         }else{
             porcentajeP = (bP - peso)/(bP - mP);
             complementoP = 1-porcentajeP;
+            arregloPeso = mayorPeso(porcentajeP,complementoP,1);
             mensajePeso = "El Nivel de Peso Pertenece en un " + Math.rint(porcentajeP*100) + "% Al Conjunto Difuso Pesado y en un " + Math.rint(complementoP*100) + "% Al Conjunto Difuso Muy Pesado";
         }
         if (tipo >= aT && tipo <= mT){
@@ -763,6 +813,7 @@ public class grafica extends javax.swing.JFrame {
             complementoT = 1-porcentajeT;
             mensajeTipo = "El Nivel de Tipo de Ropa Pertenece en un " + Math.rint(porcentajeT*100) + "% Al Conjunto Difuso de Jeans y en un " + Math.rint(complementoT*100) + "% Al Conjunto Difuso de Seda";
         }
+  
         textAreaEntradas.setText("");
         textAreaEntradas.append(mensajeNivel);
         textAreaEntradas.append(System.getProperty("line.separator"));
