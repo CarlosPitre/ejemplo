@@ -84,7 +84,7 @@ public class grafica extends javax.swing.JFrame {
         panelNivelAgua = new javax.swing.JPanel();
         panelTipo = new javax.swing.JPanel();
         panelPeso = new javax.swing.JPanel();
-        panelPeso1 = new javax.swing.JPanel();
+        panelDetergente = new javax.swing.JPanel();
         panelNivel1 = new javax.swing.JPanel();
         panelTipo1 = new javax.swing.JPanel();
         panelNivelAgua1 = new javax.swing.JPanel();
@@ -95,6 +95,12 @@ public class grafica extends javax.swing.JFrame {
         txtMaximaAgua = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         txtNivelAgua = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        txtMaximoDetergente = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        txtCantidadDetergente = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        txtMaximoTiempo = new javax.swing.JTextField();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -347,16 +353,16 @@ public class grafica extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        panelPeso1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        panelDetergente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        javax.swing.GroupLayout panelPeso1Layout = new javax.swing.GroupLayout(panelPeso1);
-        panelPeso1.setLayout(panelPeso1Layout);
-        panelPeso1Layout.setHorizontalGroup(
-            panelPeso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout panelDetergenteLayout = new javax.swing.GroupLayout(panelDetergente);
+        panelDetergente.setLayout(panelDetergenteLayout);
+        panelDetergenteLayout.setHorizontalGroup(
+            panelDetergenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 279, Short.MAX_VALUE)
         );
-        panelPeso1Layout.setVerticalGroup(
-            panelPeso1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        panelDetergenteLayout.setVerticalGroup(
+            panelDetergenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
@@ -415,7 +421,7 @@ public class grafica extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(panelNivelAgua, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(panelPeso1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(panelDetergente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(panelNivel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -438,7 +444,7 @@ public class grafica extends javax.swing.JFrame {
                     .addComponent(panelNivelAgua1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panelNivel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panelTipo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelPeso1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(panelDetergente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(346, 346, 346))
         );
 
@@ -469,6 +475,33 @@ public class grafica extends javax.swing.JFrame {
             }
         });
 
+        jLabel9.setText("Nivel Maximo de Detergente en Gr");
+
+        txtMaximoDetergente.setText("0");
+        txtMaximoDetergente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtMaximoDetergenteActionPerformed(evt);
+            }
+        });
+
+        jLabel10.setText("Nivel De Detergente en Gr. ");
+
+        txtCantidadDetergente.setText("0");
+        txtCantidadDetergente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCantidadDetergenteActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setText("Tiempo de Lavado en Minutos");
+
+        txtMaximoTiempo.setText("0");
+        txtMaximoTiempo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtMaximoTiempoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -480,16 +513,29 @@ public class grafica extends javax.swing.JFrame {
                         .addComponent(jTabbedPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(txtNivelAgua, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
                                 .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtMaximaAgua, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jLabel9)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtMaximaAgua, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(17, Short.MAX_VALUE))
+                                .addComponent(txtMaximoDetergente, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtCantidadDetergente, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtMaximoTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -500,8 +546,20 @@ public class grafica extends javax.swing.JFrame {
                     .addComponent(txtMaximaAgua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(txtMaximoDetergente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(txtMaximoTiempo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(txtNivelAgua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(txtCantidadDetergente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(239, 239, 239)
                 .addComponent(jTabbedPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -581,12 +639,14 @@ public class grafica extends javax.swing.JFrame {
         }
         graficaPeso();
         graficaNivel();
-        graficaTipo();
+        graficaTipo();        
+        universoAgua();
+        universoDetergente();
         valoresPertenecia();
-        desfuzificar();
+        suciedad();
     }//GEN-LAST:event_jButton1ActionPerformed
     
-    private void desfuzificar(){
+    private void universoAgua(){
         double proporcionAgua,nivelAgua;
         double peso = parseDouble(txtPeso.getText());
         double universoAgua = (parseDouble(txtMaxPeso.getText())*20)/16;
@@ -598,9 +658,111 @@ public class grafica extends javax.swing.JFrame {
         txtMaximaAgua.setText(Integer.toString((int) Math.round(universoAgua)));        
         graficarNivelAgua(nivelAgua,universoAgua);
     }
-    public void fuzificarDetergente(double porcentaje, double complemento){
-        
+    private void universoDetergente(){
+        double universoDetergente = (parseDouble(txtMaxPeso.getText())*250)/16;
+        txtMaximoDetergente.setText(Integer.toString((int) Math.round(universoDetergente)));
     }
+    
+    public void sistemaReglaDetergente(String[] arregloSuciedad, String[] arregloPeso){
+        double medio, valorSuciedad = parseDouble(arregloSuciedad[0]) * 100,valorPeso = parseDouble(arregloPeso[0]) * 100 ;
+        double dimension, conjunto1, conjunto2, conjunto3, detergente = 0;
+        medio = (valorSuciedad + valorPeso)/2;
+        dimension = parseInt(txtMaximoDetergente.getText())/3;
+        conjunto1 = dimension;
+        conjunto2 = dimension * 2;
+        conjunto3 = dimension * 3;
+        
+        if(arregloSuciedad[1] == "Poco Sucia" && arregloPeso[1] == "Liviano"){
+            //muy poco detergente
+           detergente = (conjunto1 * medio)/100;
+        }
+        if(arregloSuciedad[1] == "Sucia" && arregloPeso[1] == "Liviano"){
+            //poco detergente
+            detergente = (conjunto2 * medio)/100;
+        }
+        if(arregloSuciedad[1] == "Muy Sucia" && arregloPeso[1] == "Liviano"){
+            //mucho detergente
+            detergente = (conjunto3 * medio)/100;
+        }
+        if(arregloSuciedad[1] == "Poco Sucia" && arregloPeso[1] == "Pesado"){
+            //poco detergente
+            detergente = (conjunto2 * medio)/100;
+        }
+        if(arregloSuciedad[1] == "Sucia" && arregloPeso[1] == "Pesado"){
+            //mucho detergente
+            detergente = (conjunto3 * medio)/100;
+        }
+        if(arregloSuciedad[1] == "Muy Sucia" && arregloPeso[1] == "Pesado"){
+            //mucho detergente
+            detergente = (conjunto3 * medio)/100;
+        }
+        if(arregloSuciedad[1] == "Poco Sucia" && arregloPeso[1] == "Muy Pesado"){
+            //poco detergente
+            detergente = (conjunto2 * medio)/100;
+        }
+        if(arregloSuciedad[1] == "Sucia" && arregloPeso[1] == "Muy Pesado"){
+            //mucho detergente
+            detergente = (conjunto3 * medio)/100;
+        }
+        if(arregloSuciedad[1] == "Muy Sucia" && arregloPeso[1] == "Muy Pesado"){
+            //mucho detergente
+            detergente = (conjunto3 * medio)/100;
+        }
+        System.out.println(Double.toString(detergente));
+        txtCantidadDetergente.setText(Double.toString(detergente));
+        graficarDetergente(detergente,parseInt(txtMaximoDetergente.getText()));
+    }
+    
+    public void sistemaReglaTiempoLavado(String[] arregloSuciedad, String[] arregloPeso){
+        double medio, valorSuciedad = parseDouble(arregloSuciedad[0]) * 100,valorPeso = parseDouble(arregloPeso[0]) * 100 ;
+        double dimension, conjunto1, conjunto2, conjunto3, tiempo = 0;
+        medio = (valorSuciedad + valorPeso)/2;
+        dimension = 120/3;
+        conjunto1 = dimension;
+        conjunto2 = dimension * 2;
+        conjunto3 = dimension * 3;
+        
+        if(arregloSuciedad[1] == "Poco Sucia" && arregloPeso[1] == "Liviano"){
+            //corto
+           tiempo = (conjunto1 * medio)/100;
+        }
+        if(arregloSuciedad[1] == "Sucia" && arregloPeso[1] == "Liviano"){
+            //medio
+            tiempo = (conjunto2 * medio)/100;
+        }
+        if(arregloSuciedad[1] == "Muy Sucia" && arregloPeso[1] == "Liviano"){
+            //medio
+            tiempo = (conjunto3 * medio)/100;
+        }
+        if(arregloSuciedad[1] == "Poco Sucia" && arregloPeso[1] == "Pesado"){
+            //medio
+            tiempo = (conjunto2 * medio)/100;
+        }
+        if(arregloSuciedad[1] == "Sucia" && arregloPeso[1] == "Pesado"){
+            //medio
+            tiempo = (conjunto3 * medio)/100;
+        }
+        if(arregloSuciedad[1] == "Muy Sucia" && arregloPeso[1] == "Pesado"){
+            //largo
+            tiempo = (conjunto3 * medio)/100;
+        }
+        if(arregloSuciedad[1] == "Poco Sucia" && arregloPeso[1] == "Muy Pesado"){
+            //medio
+            tiempo = (conjunto2 * medio)/100;
+        }
+        if(arregloSuciedad[1] == "Sucia" && arregloPeso[1] == "Muy Pesado"){
+            //largo
+            tiempo = (conjunto3 * medio)/100;
+        }
+        if(arregloSuciedad[1] == "Muy Sucia" && arregloPeso[1] == "Muy Pesado"){
+            //largo
+            tiempo = (conjunto3 * medio)/100;
+        }
+        System.out.println(Double.toString(tiempo));
+        txtMaximoTiempo.setText(Double.toString(tiempo));
+        //graficarDetergente(detergente,parseInt(txtMaximoDetergente.getText()));
+    }
+    
     public void graficarNivelAgua(double nivelAgua, double universo){
         double a = 0;
         double b = universo;
@@ -639,51 +801,54 @@ public class grafica extends javax.swing.JFrame {
               
       public void actionPerformed(ActionEvent ae) {
        
-         //nivel minimo y maximo del tanque de la lavadora
+          //nivel minimo y maximo del tanque de la lavadora
           int max, min;
-          min=0;
-          max=Integer.parseInt(txtMaximaAgua.getText());
-         
+          min = 0;
+          max = Integer.parseInt(txtMaximaAgua.getText());
+
           progressBar.setMinimum(min);
           progressBar.setMaximum(max);
-           
-        // obtengo el nivel deseado
-        int   nivelDeseado = Integer.parseInt(txtNivelAgua.getText());      
-        // obtengo el nivel actual
-        int  nivelActual= progressBar.getValue();
-             
+
+          // obtengo el nivel deseado
+          int nivelDeseado = Integer.parseInt(txtNivelAgua.getText());
+          // obtengo el nivel actual
+          int nivelActual = progressBar.getValue();
+
 //niveles para el agua
-        if (nivelDeseado > nivelActual){
-            
-                                if(nivelDeseado == nivelActual){
-                                    timer.stop();
-                                  }
-                                 progressBar.setValue(++nivelActual);                                                           
-        }else{
-            if (nivelDeseado < nivelActual){
-                
-                           if(nivelDeseado == nivelActual){
-                                timer.stop();
-                              }
-                           progressBar.setValue(--nivelActual);                                              
-            }
-        }
+          if (nivelDeseado > nivelActual) {
+
+              if (nivelDeseado == nivelActual) {
+                  timer.stop();
+              }
+              progressBar.setValue(++nivelActual);
+          } else {
+              if (nivelDeseado < nivelActual) {
+
+                  if (nivelDeseado == nivelActual) {
+                      timer.stop();
+                  }
+                  progressBar.setValue(--nivelActual);
+              }
+          }
  //fin niveles para  agua   
-    
-      /*int nivel;
-      nivel = Integer.parseInt(txtsuciedad.getText()); 
-      suciedad(nivel);*/
+
+          //double nivel = parseDouble(txtNivel.getText());
+          //System.out.println(nivel);
+         /* nivel = parseDouble(txtNivel.getText());*/
+          //suciedad(nivel);
       
       }
 
-      private void suciedad(int nivelSuciedad) {
+      /*private void suciedad(double nivelSuciedad) {
                            
        //agregar
-                double max, min,pocosucia,sucia,muysucia;
-                min=1;
-                pocosucia =4;
-                sucia =9;
-                muysucia =14;
+                double min,pocosucia,sucia,muysucia,parte,max;
+                max= parseDouble(txtMaxNivel.getText());
+                parte=max/3;
+                min=0;
+                pocosucia =parte;
+                sucia =parte*2;
+                muysucia =parte*3;
                         
       //niveles para el color
                
@@ -719,14 +884,15 @@ public class grafica extends javax.swing.JFrame {
 
                
                 //fin niveles
-            }
+            }*/
      
     };
     timer = new Timer(500, updateProBar);
     timer.start();  
     }
+    
     private String[] mayorPeso(double porcentaje, double complemento, int bandera){
-        String arreglo[] = null;
+        String[] arreglo = new String[2];
         if (bandera == 0){
             if(porcentaje > complemento){
                 arreglo[0] = Double.toString(porcentaje);
@@ -748,13 +914,14 @@ public class grafica extends javax.swing.JFrame {
         return arreglo;
     }
     private String[] mayorSuciedad(double porcentaje, double complemento, int bandera){
-        String arreglo[] = null;
+        
+        String[] arreglo = new String[2];
         if (bandera == 0){
             if(porcentaje > complemento){
                 arreglo[0] = Double.toString(porcentaje);
                 arreglo[1] = "Sucia";
             }else{
-                 arreglo[0] = Double.toString(complemento);
+                arreglo[0] = Double.toString(complemento);
                 arreglo[1] = "Poco Sucia";
             }
         }
@@ -769,6 +936,53 @@ public class grafica extends javax.swing.JFrame {
         }
         return arreglo;
     }
+    
+    private void suciedad() {
+
+        //agregar
+        double nivelSuciedad = parseDouble(txtNivel.getText());
+        double min, pocosucia, sucia, muysucia, parte, max;
+        max = parseDouble(txtMaxNivel.getText());
+        parte = max / 3;
+        min = 0;
+        pocosucia = parte;
+        sucia = parte * 2;
+        muysucia = parte * 3;
+
+      //niveles para el color
+        //niveles normal
+        if (nivelSuciedad >= min && nivelSuciedad < pocosucia) {
+
+            UIDefaults defaults = new UIDefaults();
+            defaults.put("ProgressBar[Enabled].foregroundPainter", new MyPainter(Color.BLUE));
+            defaults.put("ProgressBar[Enabled+Finished].foregroundPainter", new MyPainter(Color.BLUE));
+            progressBar.putClientProperty("Nimbus.Overrides.InheritDefaults", Boolean.TRUE);
+            progressBar.putClientProperty("Nimbus.Overrides", defaults);
+
+        } else {
+            //nivel sucio
+            if (nivelSuciedad >= pocosucia && nivelSuciedad < sucia) {
+                UIDefaults defaults = new UIDefaults();
+                defaults.put("ProgressBar[Enabled].foregroundPainter", new MyPainter(Color.LIGHT_GRAY));
+                defaults.put("ProgressBar[Enabled+Finished].foregroundPainter", new MyPainter(Color.LIGHT_GRAY));
+                progressBar.putClientProperty("Nimbus.Overrides.InheritDefaults", Boolean.TRUE);
+                progressBar.putClientProperty("Nimbus.Overrides", defaults);
+            } else {
+                //nivel muy sucio
+                if (nivelSuciedad >= sucia && nivelSuciedad <= muysucia) {
+                    UIDefaults defaults = new UIDefaults();
+                    defaults.put("ProgressBar[Enabled].foregroundPainter", new MyPainter(Color.GRAY));
+                    defaults.put("ProgressBar[Enabled+Finished].foregroundPainter", new MyPainter(Color.GRAY));
+                    progressBar.putClientProperty("Nimbus.Overrides.InheritDefaults", Boolean.TRUE);
+                    progressBar.putClientProperty("Nimbus.Overrides", defaults);
+                }
+
+            }
+        }
+
+        //fin niveles
+    }
+    
     private void valoresPertenecia(){
         double nivel = parseDouble(txtNivel.getText());
         double peso = parseDouble(txtPeso.getText());
@@ -785,24 +999,26 @@ public class grafica extends javax.swing.JFrame {
         if (nivel >= aN && nivel <= mN){
             porcentajeN = (nivel - aN)/(mN - aN);
             complementoN = 1-porcentajeN;
-            arregloSuciedad = mayorSuciedad(porcentajeN,complementoN,0);
+            
             mensajeNivel = "El Nivel de Suciedad Pertenece en un " + Math.rint(porcentajeN*100) + "% Al Conjunto Difuso Sucia y en un " + Math.rint(complementoN*100) + "% Al Conjunto Difuso de Poco Sucia";
+            arregloSuciedad = mayorSuciedad(porcentajeN,complementoN,0);
         }else{
             porcentajeN = (bN - nivel)/(bN - mN);
             complementoN = 1-porcentajeN;
-            arregloSuciedad = mayorSuciedad(porcentajeN,complementoN,1);
+            
             mensajeNivel = "El Nivel de Suciedad Pertenece en un " + Math.rint(porcentajeN*100) + "% Al Conjunto Difuso Sucia y en un " + Math.rint(complementoN*100) + "% Al Conjunto Difuso Muy Sucia ";
+            arregloSuciedad = mayorSuciedad(porcentajeN,complementoN,1);
         }
         if (peso >= aP && peso <= mP){
             porcentajeP = (peso - aP)/(mP - aP);
-            complementoP = 1-porcentajeP;
-            arregloPeso = mayorPeso(porcentajeP,complementoP,0);
+            complementoP = 1-porcentajeP;            
             mensajePeso = "El Nivel de Peso Pertenece en un " + Math.rint(porcentajeP*100) + "% Al Conjunto Difuso Pesado y en un " + Math.rint(complementoP*100) + "% Al Conjunto Difuso  Liviano";
+            arregloPeso = mayorPeso(porcentajeP,complementoP,0);
         }else{
             porcentajeP = (bP - peso)/(bP - mP);
-            complementoP = 1-porcentajeP;
-            arregloPeso = mayorPeso(porcentajeP,complementoP,1);
+            complementoP = 1-porcentajeP;            
             mensajePeso = "El Nivel de Peso Pertenece en un " + Math.rint(porcentajeP*100) + "% Al Conjunto Difuso Pesado y en un " + Math.rint(complementoP*100) + "% Al Conjunto Difuso Muy Pesado";
+            arregloPeso = mayorPeso(porcentajeP,complementoP,1);
         }
         if (tipo >= aT && tipo <= mT){
             porcentajeT = (tipo - aT)/(mT - aT);
@@ -813,13 +1029,41 @@ public class grafica extends javax.swing.JFrame {
             complementoT = 1-porcentajeT;
             mensajeTipo = "El Nivel de Tipo de Ropa Pertenece en un " + Math.rint(porcentajeT*100) + "% Al Conjunto Difuso de Jeans y en un " + Math.rint(complementoT*100) + "% Al Conjunto Difuso de Seda";
         }
-  
+        sistemaReglaDetergente(arregloSuciedad,arregloPeso);
+        sistemaReglaTiempoLavado(arregloSuciedad,arregloPeso);
         textAreaEntradas.setText("");
         textAreaEntradas.append(mensajeNivel);
         textAreaEntradas.append(System.getProperty("line.separator"));
         textAreaEntradas.append(mensajePeso);
         textAreaEntradas.append(System.getProperty("line.separator"));
         textAreaEntradas.append(mensajeTipo);
+    }
+     private void graficarDetergente(double detergente, double universo){
+        double a = 0;
+        double b = universo;
+        XYSeries Puntos = new XYSeries("Puntos 1");
+        Puntos.add(a, 0);
+        Puntos.add((a+b)/2, b);
+        Puntos.add(b, 0);
+        XYSeries Puntos2 = new XYSeries("Puntos 2");
+        Puntos2.add(a, b);
+        Puntos2.add((a+b)/2, 0);
+        Puntos2.add(b, b);
+        XYSeries PuntosRecta = new XYSeries("Recta");
+        PuntosRecta.add(detergente,0);
+        PuntosRecta.add(detergente, b);
+        
+        final XYSeriesCollection dataset = new XYSeriesCollection();
+        dataset.addSeries(Puntos);
+        dataset.addSeries(Puntos2);
+        dataset.addSeries(PuntosRecta);
+        JFreeChart chart = ChartFactory.createXYLineChart(
+            "Grafica Nivel Suciedad", "Universo", "Grado Pertenencia",
+            dataset, PlotOrientation.VERTICAL, true, true, false);
+        ChartPanel panel = new ChartPanel(chart);        
+        panelDetergente.setLayout(new java.awt.BorderLayout());
+        panelDetergente.add(panel);   
+        panelDetergente.validate();
     }
     
     private void graficaNivel(){
@@ -942,6 +1186,18 @@ public class grafica extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNivelAguaActionPerformed
 
+    private void txtMaximoDetergenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaximoDetergenteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMaximoDetergenteActionPerformed
+
+    private void txtCantidadDetergenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadDetergenteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCantidadDetergenteActionPerformed
+
+    private void txtMaximoTiempoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaximoTiempoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMaximoTiempoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -981,6 +1237,8 @@ public class grafica extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -988,6 +1246,7 @@ public class grafica extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
@@ -1000,20 +1259,23 @@ public class grafica extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane5;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JPanel panelDetergente;
     private javax.swing.JPanel panelNivel;
     private javax.swing.JPanel panelNivel1;
     private javax.swing.JPanel panelNivelAgua;
     private javax.swing.JPanel panelNivelAgua1;
     private javax.swing.JPanel panelPeso;
-    private javax.swing.JPanel panelPeso1;
     private javax.swing.JPanel panelTipo;
     private javax.swing.JPanel panelTipo1;
     private javax.swing.JProgressBar progressBar;
     private javax.swing.JTextArea textAreaEntradas;
+    private javax.swing.JTextField txtCantidadDetergente;
     private javax.swing.JTextField txtMaxNivel;
     private javax.swing.JTextField txtMaxPeso;
     private javax.swing.JTextField txtMaxTipo;
     private javax.swing.JTextField txtMaximaAgua;
+    private javax.swing.JTextField txtMaximoDetergente;
+    private javax.swing.JTextField txtMaximoTiempo;
     private javax.swing.JTextField txtMinNivel;
     private javax.swing.JTextField txtMinPeso;
     private javax.swing.JTextField txtMinTipo;
